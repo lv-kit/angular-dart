@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  angular:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./app:/app
+    restart: always
+    command: sh utils/dev.sh
+
